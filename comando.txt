@@ -9,6 +9,7 @@ Instalacion
  npm i concurrently cors
  npm i cors
  npm i axios
+ npm i slugify
 
  carpeta:client
  npm i react-router-dom

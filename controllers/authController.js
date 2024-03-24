@@ -34,19 +34,20 @@ export const registerController = async (req, res) => {
                 succes: false,
                 message: 'Usuario ya registrado anteriormente',
             });
+        }else{
+
+            //registro usuario
+            const hashedPassword = await hashPassword(password);
+
+            //salvar
+            const user = await new userModel({name, email, phone, address, password:hashedPassword, answer}).save();
+
+            res.status(201).send({
+                success: true,
+                message: 'Registro de usuario exitoso',
+                user,
+            });
         }
-
-        //registro usuario
-        const hashedPassword = await hashPassword(password);
-
-        //salvar
-        const user = await new userModel({name, email, phone, address, password:hashedPassword, answer}).save();
-
-        res.status(201).send({
-            success: true,
-            message: 'Registro de usuario exitoso',
-            user,
-        });
 
     } catch (error) {
         console.log(error);
@@ -99,6 +100,7 @@ export const loginController = async (req, res) => {
                 phone: user.phone,
                 address: user.address,
                 answer: user.answer,
+                role: user.role,
             },
             token,
         });

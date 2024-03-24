@@ -101,7 +101,7 @@ const Register = () => {
                     </div>
                     <div className="card flex justify-content-center">
                         <Dropdown value={selectedQuestion} onChange={(e) => setSelectedQuestion(e.value)} options={questions} optionLabel="name" 
-                        placeholder="Select a City" className="w-full md:w-14rem" />
+                        placeholder="Select a Question" className="w-full md:w-14rem" checkmark={true} highlightOnSelect={false} />
                     </div>
                         <div className="mb-3">
                             <input
