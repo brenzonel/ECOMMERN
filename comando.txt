@@ -10,6 +10,7 @@ Instalacion
  npm i cors
  npm i axios
  npm i slugify
+ npm i express-formidable
 
  carpeta:client
  npm i react-router-dom
