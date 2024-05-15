@@ -35,6 +35,10 @@ const productSchema = new mongoose.Schema(
             type: Boolean,
             required: false
         },
+        status:{
+            type: Boolean,
+            required: false
+        },
     }, {timestamps: true}
 );
 
